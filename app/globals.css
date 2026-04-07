@@ -1,7 +1,8 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
 /* ========================================================
-   MODE KITAB (DNA ASLI DARI BLOGGER)
+   MODE KITAB (DNA ASLI DARI BLOGGER & FULL WIDTH)
    ======================================================== */
 
 /* 1. Latar Belakang Kertas Krem & Tekstur */
@@ -14,15 +15,29 @@
 
 /* 2. Menghancurkan Batasan Lebar (Full-Width ke Pojok) */
 .mode-kitab-aktif article {
-  max-width: 100vw !important;
+  max-width: 100% !important; 
   width: 100% !important;
   margin: 0 !important;
-  padding: 40px 20px !important;
+  padding: 40px 60px !important; /* Jarak aman pinggir seperti di foto referensi */
 }
 
-/* Menghapus gaya bawaan Tailwind Prose yang menahan margin */
+/* Mematikan kunci gembok utama Tailwind Prose */
 .mode-kitab-aktif article.prose {
   max-width: none !important;
+}
+
+/* SERANGAN INTI: Menghancurkan batas 65 karakter pada semua anak paragraf */
+.mode-kitab-aktif article.prose p,
+.mode-kitab-aktif article.prose h1,
+.mode-kitab-aktif article.prose h2,
+.mode-kitab-aktif article.prose h3,
+.mode-kitab-aktif article.prose h4,
+.mode-kitab-aktif article.prose ul,
+.mode-kitab-aktif article.prose ol,
+.mode-kitab-aktif article.prose li,
+.mode-kitab-aktif article.prose blockquote,
+.mode-kitab-aktif article.prose div {
+  max-width: 100% !important; 
 }
 
 /* 3. Gaya Teks Klasik (Amiri/Georgia, Justify, Spasi Lebar) */
@@ -30,7 +45,7 @@
 .mode-kitab-aktif article div,
 .mode-kitab-aktif article li {
   font-size: 1.1rem !important;
-  line-height: 1.6 !important;
+  line-height: 1.8 !important; /* Sedikit dilonggarkan agar lebih enak dibaca */
   font-family: 'Amiri', 'Georgia', serif !important;
   text-align: justify !important;
   color: #2c241b !important;
@@ -41,4 +56,11 @@
 .mode-kitab-aktif footer,
 .mode-kitab-aktif .tombol-melayang {
   display: none !important;
+}
+
+/* 5. Responsif untuk Layar HP (Margin diperkecil) */
+@media (max-width: 768px) {
+  .mode-kitab-aktif article {
+    padding: 20px 20px !important;
+  }
 }
