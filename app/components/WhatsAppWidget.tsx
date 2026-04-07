@@ -35,11 +35,15 @@ export default function WhatsAppWidget() {
               <p className="text-xs opacity-90">Biasanya membalas dalam 5 menit</p>
             </div>
             <button 
-              onClick={() => setIsOpen(false)} 
-              className="text-white hover:bg-white/20 rounded-full w-8 h-8 flex items-center justify-center transition focus:outline-none"
-            >
-              <i className="fas fa-times"></i>
-            </button>
+        onClick={() => setIsOpen(!isOpen)} // (atau fungsi toggle yang Anda gunakan)
+        aria-label="Chat WhatsApp" 
+        id="wa-toggle-btn" 
+        // UKURAN DISAMAKAN: 45px, border-2, dan efek bayangan yang sama dengan Mode Kitab
+        className="w-[45px] h-[45px] bg-[#25D366] rounded-full flex items-center justify-center text-white hover:bg-green-600 transition-all duration-300 hover:scale-110 focus:outline-none border-2 border-white shadow-[0_4px_10px_rgba(0,0,0,0.2)] pointer-events-auto"
+      >
+        {/* Ukuran ikon disesuaikan menjadi text-xl agar pas di dalam lingkaran 45px */}
+        <i className="fab fa-whatsapp text-xl"></i>
+      </button>
           </div>
           
           {/* Area Percakapan */}
