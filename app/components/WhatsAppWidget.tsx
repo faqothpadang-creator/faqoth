@@ -46,7 +46,8 @@ export default function WhatsAppWidget() {
         onClick={() => setIsOpen(!isOpen)}
         className="w-[45px] h-[45px] bg-[#25D366] rounded-full flex items-center justify-center text-white hover:bg-green-600 transition-all duration-300 hover:scale-110 focus:outline-none border-2 border-white shadow-[0_4px_10px_rgba(0,0,0,0.2)] pointer-events-auto"
       >
-        <i className={`fas ${isOpen ? 'fa-times' : 'fa-whatsapp'} text-[22px]`}></i>
+        {/* PERBAIKAN LOGIKA IKON: 'fa-times' adalah 'fas', 'fa-whatsapp' adalah 'fab' */}
+        <i className={`${isOpen ? 'fas fa-times' : 'fab fa-whatsapp'} text-[22px]`}></i>
       </button>
     </div>
   );
