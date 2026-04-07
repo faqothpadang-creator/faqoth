@@ -5,6 +5,7 @@ import SearchModal from './components/SearchModal';
 import BackToTop from './components/BackToTop';
 import WhatsAppWidget from './components/WhatsAppWidget';
 import { Inter } from 'next/font/google';
+import AutoFormatArab from './components/AutoFormatArab';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({
           <BackToTop />
           {/* Untuk kerapian, saya asumsikan WhatsAppWidget diatur CSS-nya di kiri bawah di file-nya */}
           <WhatsAppWidget />
+          <AutoFormatArab />
         </div>
 
       </body>

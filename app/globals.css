@@ -97,3 +97,18 @@
     font-size: 26px !important;
   }
 }
+
+/* Gaya Otomatis untuk Teks Arab Hasil Tangkapan Mesin */
+.font-arabic-auto {
+  font-family: 'Amiri', serif !important;
+  font-size: 32px !important;
+  line-height: 2.2 !important;
+  text-align: right !important;
+  margin-top: 1.2em !important;
+  margin-bottom: 1.2em !important;
+  color: #2c241b !important;
+}
+
+@media (max-width: 768px) {
+  .font-arabic-auto { font-size: 26px !important; }
+}
