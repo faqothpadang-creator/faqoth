@@ -37,6 +37,7 @@ export default function RootLayout({
         <SearchModal />
         <BackToTop />
         <WhatsAppWidget />
+        
 
       </body>
     </html>

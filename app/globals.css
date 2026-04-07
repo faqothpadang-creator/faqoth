@@ -1,2 +1,14 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+/* Logika Mode Kitab: Sembunyikan elemen pengganggu saat mode aktif */
+.mode-kitab-aktif nav, 
+.mode-kitab-aktif footer, 
+.mode-kitab-aktif .tombol-melayang {
+  display: none !important;
+}
+
+/* Membuat tulisan sedikit lebih lebar dan nyaman di mata saat mode kitab */
+.mode-kitab-aktif article {
+  padding-top: 50px;
+  max-width: 900px !important;
+}
