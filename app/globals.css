@@ -139,17 +139,44 @@ html.dark body:not(.mode-kitab-aktif) .bg-gray-50 {
   border-color: #334155 !important;
 }
 
-/* 3. BOM NUKLIR: Paksa Semua Tinta Tulisan Jadi Putih Terang */
-html.dark body:not(.mode-kitab-aktif) .text-gray-900,
-html.dark body:not(.mode-kitab-aktif) .text-gray-800,
-html.dark body:not(.mode-kitab-aktif) .text-gray-700,
-html.dark body:not(.mode-kitab-aktif) .text-gray-600,
-html.dark body:not(.mode-kitab-aktif) .prose,
-html.dark body:not(.mode-kitab-aktif) .prose p,
-html.dark body:not(.mode-kitab-aktif) .prose h1,
-html.dark body:not(.mode-kitab-aktif) .prose h2,
-html.dark body:not(.mode-kitab-aktif) .prose h3,
-html.dark body:not(.mode-kitab-aktif) .prose li,
-html.dark body:not(.mode-kitab-aktif) .prose div {
+/* 3. BOM NUKLIR SUPER: Menembus Pertahanan Tailwind Prose & Variabel Tersembunyi */
+html.dark body:not(.mode-kitab-aktif) .prose {
+  --tw-prose-body: #f8fafc !important;
+  --tw-prose-headings: #f8fafc !important;
+  --tw-prose-bold: #f8fafc !important;
+  --tw-prose-links: #2dd4bf !important;
+  --tw-prose-quotes: #f8fafc !important;
+  --tw-prose-counters: #cbd5e1 !important;
+  --tw-prose-bullets: #cbd5e1 !important;
+}
+
+/* Memaksa semua elemen huruf di dalam ruang baca untuk menyala putih */
+html.dark body:not(.mode-kitab-aktif) main h1,
+html.dark body:not(.mode-kitab-aktif) main h2,
+html.dark body:not(.mode-kitab-aktif) main h3,
+html.dark body:not(.mode-kitab-aktif) main p,
+html.dark body:not(.mode-kitab-aktif) main span,
+html.dark body:not(.mode-kitab-aktif) main li,
+html.dark body:not(.mode-kitab-aktif) main a,
+html.dark body:not(.mode-kitab-aktif) main strong,
+html.dark body:not(.mode-kitab-aktif) main div {
   color: #f8fafc !important;
+}
+
+/* 4. PENETRAL CAHAYA: Menggelapkan Kotak Daftar Isi (TOC) & Elemen Copy-Paste */
+html.dark body:not(.mode-kitab-aktif) main .bg-white,
+html.dark body:not(.mode-kitab-aktif) main [style*="background: white"],
+html.dark body:not(.mode-kitab-aktif) main [style*="background-color: white"],
+html.dark body:not(.mode-kitab-aktif) main [style*="background: #fff"],
+html.dark body:not(.mode-kitab-aktif) main [style*="background-color: #fff"],
+html.dark body:not(.mode-kitab-aktif) main [style*="background: #f8fafc"],
+html.dark body:not(.mode-kitab-aktif) main [style*="background-color: #f8fafc"] {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+/* Memastikan teks di dalam kotak Daftar Isi juga terbaca */
+html.dark body:not(.mode-kitab-aktif) main [style*="background"] span,
+html.dark body:not(.mode-kitab-aktif) main [style*="background"] a {
+  color: #cbd5e1 !important;
 }
