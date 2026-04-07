@@ -39,7 +39,7 @@ export default function WhatsAppWidget() {
         aria-label="Chat WhatsApp" 
         id="wa-toggle-btn" 
         // UKURAN DISAMAKAN: 45px, border-2, dan efek bayangan yang sama dengan Mode Kitab
-        className="w-[45px] h-[45px] bg-[#25D366] rounded-full flex items-center justify-center text-white hover:bg-green-600 transition-all duration-300 hover:scale-110 focus:outline-none border-2 border-white shadow-[0_4px_10px_rgba(0,0,0,0.2)] pointer-events-auto"
+        className="w-[35px] h-[35px] bg-[#25D366] rounded-full flex items-center justify-center text-white hover:bg-green-600 transition-all duration-300 hover:scale-110 focus:outline-none border-2 border-white shadow-[0_4px_10px_rgba(0,0,0,0.2)] pointer-events-auto"
       >
         {/* Ukuran ikon disesuaikan menjadi text-xl agar pas di dalam lingkaran 45px */}
         <i className="fab fa-whatsapp text-xl"></i>
