@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from 'react';
 
 export default function ModeKitabButton() {
@@ -20,16 +19,17 @@ export default function ModeKitabButton() {
   };
 
   return (
-    <div className="fixed bottom-[90px] left-8 z-50 flex items-center group">
+    // Z-index diatur ke 40, agar saat kotak WA terbuka, tombol buku ini tertutupi dengan rapi
+    <div className="fixed bottom-[90px] left-8 z-40 flex items-center group">
       <button
         onClick={toggleModeKitab}
-        className={`w-[45px] h-[45px] rounded-full flex items-center justify-center transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.2)] border-2 z-10 relative
+        className={`w-[45px] h-[45px] rounded-full flex items-center justify-center transition-all duration-300 shadow-[0_4px_10px_rgba(0,0,0,0.2)] border-2 relative
           ${isModeKitab 
             ? 'bg-[#fdf6e3] text-[#8d6e63] border-[#8d6e63] hover:scale-110' 
             : 'bg-[#8d6e63] text-white border-white hover:bg-[#5d4037] hover:scale-110'
           }`}
       >
-        <i className={`fas ${isModeKitab ? 'fa-compress' : 'fa-book-open'}`}></i>
+        <i className={`fas ${isModeKitab ? 'fa-compress' : 'fa-book-open'} text-[18px]`}></i>
       </button>
 
       <div 
