@@ -21,7 +21,8 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       </head>
       
-      <body className={`${inter.className} bg-white antialiased`}>
+     {/* KODE BARU: Menambahkan dark:bg-[#0f172a] dan efek transisi halus */}
+      <body className={`${inter.className} bg-white dark:bg-[#0f172a] text-gray-900 dark:text-[#f8fafc] antialiased transition-colors duration-500`}>
         
         {/* 1. Navbar: Selalu di atas */}
         <Navbar />

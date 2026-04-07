@@ -120,3 +120,36 @@
     font-size: 26px !important;
   }
 }
+
+/* ========================================================
+   DARK MODE GLOBAL (TIDAK BERLAKU JIKA MODE KITAB AKTIF)
+   ======================================================== */
+
+/* 1. Paksa Tembok Utama Jadi Gelap (Kecuali Mode Kitab Aktif) */
+html.dark body:not(.mode-kitab-aktif),
+html.dark body:not(.mode-kitab-aktif) main {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+/* 2. Ubah Kotak/Card Putih Jadi Abu-Abu Malam */
+html.dark body:not(.mode-kitab-aktif) .bg-white,
+html.dark body:not(.mode-kitab-aktif) .bg-gray-50 {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+/* 3. BOM NUKLIR: Paksa Semua Tinta Tulisan Jadi Putih Terang */
+html.dark body:not(.mode-kitab-aktif) .text-gray-900,
+html.dark body:not(.mode-kitab-aktif) .text-gray-800,
+html.dark body:not(.mode-kitab-aktif) .text-gray-700,
+html.dark body:not(.mode-kitab-aktif) .text-gray-600,
+html.dark body:not(.mode-kitab-aktif) .prose,
+html.dark body:not(.mode-kitab-aktif) .prose p,
+html.dark body:not(.mode-kitab-aktif) .prose h1,
+html.dark body:not(.mode-kitab-aktif) .prose h2,
+html.dark body:not(.mode-kitab-aktif) .prose h3,
+html.dark body:not(.mode-kitab-aktif) .prose li,
+html.dark body:not(.mode-kitab-aktif) .prose div {
+  color: #f8fafc !important;
+}
