@@ -1,35 +1,44 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-/* TATA LETAK MODE KITAB (REVISI TOTAL UNTUK FULL-WIDTH & WARNA KERTAS) */
+/* ========================================================
+   MODE KITAB (DNA ASLI DARI BLOGGER)
+   ======================================================== */
 
-/* 1. Warna Latar Belakang Kertas Krem/Kekuningan seperti Gambar 10 */
-.mode-kitab-aktif body {
-  background-color: #f6f1e1 !important; /* Warna kertas otentik */
-  color: #1a1a1a !important; /* Teks sedikit lebih gelap agar kontras */
+/* 1. Latar Belakang Kertas Krem & Tekstur */
+.mode-kitab-aktif body,
+.mode-kitab-aktif main {
+  background-color: #fdf6e3 !important;
+  background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png') !important;
+  color: #2c241b !important;
 }
 
-/* 2. Menghapus batasan lebar dan padding agar full-width ke pojok */
+/* 2. Menghancurkan Batasan Lebar (Full-Width ke Pojok) */
 .mode-kitab-aktif article {
-  max-width: 100% !important; /* Full width 100% layar */
-  padding: 40px 20px !important; /* Padding minimal di pojok kanan kiri */
+  max-width: 100vw !important;
+  width: 100% !important;
   margin: 0 !important;
+  padding: 40px 20px !important;
 }
 
-/* 3. Menghilangkan elemen prose agar teks meluas total tanpa batasan internal Tailwind */
+/* Menghapus gaya bawaan Tailwind Prose yang menahan margin */
 .mode-kitab-aktif article.prose {
   max-width: none !important;
 }
 
-/* 4. Sembunyikan elemen pengganggu (nav, footer, tombol melayang) */
-.mode-kitab-aktif nav, 
-.mode-kitab-aktif footer, 
-.mode-kitab-aktif .tombol-melayang {
-  display: none !important;
+/* 3. Gaya Teks Klasik (Amiri/Georgia, Justify, Spasi Lebar) */
+.mode-kitab-aktif article p,
+.mode-kitab-aktif article div,
+.mode-kitab-aktif article li {
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+  font-family: 'Amiri', 'Georgia', serif !important;
+  text-align: justify !important;
+  color: #2c241b !important;
 }
 
-/* Tampilan Desktop & Mobile untuk mode kitab */
-@media (min-width: 768px) {
-  .mode-kitab-aktif article {
-    padding: 60px 5% !important; /* Beri sedikit ruang bernapas di desktop */
-  }
+/* 4. Sembunyikan Elemen Pengganggu */
+.mode-kitab-aktif nav,
+.mode-kitab-aktif footer,
+.mode-kitab-aktif .tombol-melayang {
+  display: none !important;
 }
