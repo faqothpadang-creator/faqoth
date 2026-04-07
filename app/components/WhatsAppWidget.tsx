@@ -22,11 +22,11 @@ export default function WhatsAppWidget() {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-50 flex flex-col items-end gap-4 font-sans">
+    <div className="fixed bottom-8 left-8 z-50 flex flex-col items-end gap-4 font-sans">
       
       {/* Kotak Chat (Hanya dirender jika tombol diklik / isOpen bernilai true) */}
       {isOpen && (
-        <div className="bg-white rounded-xl shadow-2xl w-80 overflow-hidden border border-gray-100 transform transition-all duration-300 origin-bottom-right">
+        <div className="bg-white rounded-xl shadow-2xl w-80 overflow-hidden border border-gray-100 transform transition-all duration-300 origin-bottom-left">
           
           {/* Bagian Kepala Kotak Chat */}
           <div className="bg-[#128C7E] p-4 flex justify-between items-center text-white">
