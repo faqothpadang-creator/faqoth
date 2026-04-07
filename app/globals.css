@@ -1,78 +1,99 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+/* Mengimpor Font Arab Klasik secara paksa dari Google */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
 
 /* ========================================================
-   MODE KITAB (DNA ASLI DARI BLOGGER & FULL WIDTH MUTLAK)
+   MODE KITAB (PERBAIKAN FONT, ARABIC, & LAYOUT OTENTIK)
    ======================================================== */
 
-/* 1. Latar Belakang Kertas Krem & Tekstur */
 .mode-kitab-aktif body,
 .mode-kitab-aktif main {
   background-color: #fdf6e3 !important;
   background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png') !important;
   color: #2c241b !important;
-  overflow-x: hidden !important; /* Mencegah layar bisa digeser ke samping (bug) */
 }
 
-/* 2. BOM NUKLIR: Menghancurkan Semua "Sangkar" Pembatas Lebar Tailwind */
-.mode-kitab-aktif main,
-.mode-kitab-aktif main > div,
-.mode-kitab-aktif article,
-.mode-kitab-aktif .max-w-md,
-.mode-kitab-aktif .max-w-lg,
-.mode-kitab-aktif .max-w-xl,
-.mode-kitab-aktif .max-w-2xl,
-.mode-kitab-aktif .max-w-3xl,
-.mode-kitab-aktif .max-w-4xl,
-.mode-kitab-aktif .max-w-5xl,
-.mode-kitab-aktif .max-w-7xl,
-.mode-kitab-aktif .mx-auto,
-.mode-kitab-aktif .prose {
-  max-width: 100vw !important;
-  width: 100% !important;
-  margin: 0 !important;
-}
-
-/* Mengatur jarak baca yang nyaman di pinggir layar (seperti buku fisik) */
-.mode-kitab-aktif article {
-  padding: 60px 8% !important; 
-}
-
-/* Menghancurkan batas 65 karakter bawaan Tailwind Prose pada teks */
-.mode-kitab-aktif article.prose p,
-.mode-kitab-aktif article.prose h1,
-.mode-kitab-aktif article.prose h2,
-.mode-kitab-aktif article.prose h3,
-.mode-kitab-aktif article.prose h4,
-.mode-kitab-aktif article.prose ul,
-.mode-kitab-aktif article.prose ol,
-.mode-kitab-aktif article.prose li,
-.mode-kitab-aktif article.prose blockquote,
-.mode-kitab-aktif article.prose div {
-  max-width: 100% !important; 
-}
-
-/* 3. Gaya Teks Klasik Otentik */
-.mode-kitab-aktif article p,
-.mode-kitab-aktif article div,
-.mode-kitab-aktif article li {
-  font-size: 1.15rem !important; /* Ukuran teks sedikit diperbesar agar lebih jelas */
-  line-height: 1.8 !important;
-  font-family: 'Amiri', 'Georgia', serif !important;
-  text-align: justify !important;
-  color: #2c241b !important;
-}
-
-/* 4. Sembunyikan Elemen Pengganggu (Navbar, Widget, Footer) */
+/* MENGHILANGKAN PENGGANGGU & PADDING ATAS BEKAS NAVBAR */
 .mode-kitab-aktif nav,
 .mode-kitab-aktif footer,
 .mode-kitab-aktif .tombol-melayang {
   display: none !important;
 }
+.mode-kitab-aktif main {
+  padding-top: 0 !important; 
+}
 
-/* 5. Responsif untuk Layar HP */
+/* PENGATURAN KERTAS & MARGIN (PERSIS SEPERTI FOTO) */
+.mode-kitab-aktif article {
+  max-width: 100vw !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 60px 10% !important; /* Jarak kiri kanan 10% agar sangat rapi */
+}
+
+/* HANCURKAN BATASAN TAILWIND */
+.mode-kitab-aktif article.prose { max-width: none !important; }
+.mode-kitab-aktif article.prose p,
+.mode-kitab-aktif article.prose h1,
+.mode-kitab-aktif article.prose h2,
+.mode-kitab-aktif article.prose h3,
+.mode-kitab-aktif article.prose div,
+.mode-kitab-aktif article.prose ul,
+.mode-kitab-aktif article.prose ol,
+.mode-kitab-aktif article.prose li {
+  max-width: 100% !important; 
+}
+
+/* ========================================================
+   1. GAYA TEKS INDONESIA (LATIN) - NYAMAN DIBACA
+   ======================================================== */
+.mode-kitab-aktif article.prose p,
+.mode-kitab-aktif article.prose li,
+.mode-kitab-aktif article.prose div {
+  font-size: 18px !important;
+  line-height: 2 !important; /* Spasi baris lega */
+  font-family: Georgia, 'Times New Roman', serif !important;
+  text-align: justify !important;
+  color: #3e2723 !important; /* Cokelat sangat gelap seperti tinta lama */
+  margin-bottom: 1.5em !important;
+}
+
+/* ========================================================
+   2. GAYA TEKS ARAB - BESAR & RATA KANAN
+   ======================================================== */
+.mode-kitab-aktif article.prose [dir="rtl"],
+.mode-kitab-aktif article.prose p[dir="rtl"] {
+  font-family: 'Amiri', serif !important;
+  font-size: 32px !important; /* Huruf Arab jauh lebih besar */
+  line-height: 2.2 !important;
+  text-align: right !important;
+  color: #2c241b !important;
+  margin-top: 1.2em !important;
+  margin-bottom: 1.2em !important;
+}
+
+/* ========================================================
+   3. TATA LETAK GAMBAR (PROPORSIONAL DI TENGAH KERTAS)
+   ======================================================== */
+.mode-kitab-aktif article.prose img {
+  width: 100% !important;
+  max-width: 850px !important; /* Batas maksimal agar tidak pecah di monitor besar */
+  margin: 3em auto !important; /* Berada presisi di tengah dengan jarak atas-bawah */
+  display: block !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important; /* Efek bayangan halus */
+}
+
+/* Responsif HP */
 @media (max-width: 768px) {
   .mode-kitab-aktif article {
     padding: 30px 5% !important;
+  }
+  .mode-kitab-aktif article.prose p {
+    font-size: 16px !important;
+  }
+  .mode-kitab-aktif article.prose [dir="rtl"] {
+    font-size: 26px !important;
   }
 }
