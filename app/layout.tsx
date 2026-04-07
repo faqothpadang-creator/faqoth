@@ -1,39 +1,43 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Navbar from "./components/Navbar";
-import WhatsAppWidget from "./components/WhatsAppWidget";
-import SearchModal from "./components/SearchModal";
+import './globals.css';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import SearchModal from './components/SearchModal';
+import BackToTop from './components/BackToTop';
+import WhatsAppWidget from './components/WhatsAppWidget';
+import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Raihan Faqoth",
-  description: "Website modern super canggih",
-};
+const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="id">
+    <html lang="id" className="scroll-smooth">
       <head>
-        {/* Taktik Bypass: Menanamkan FontAwesome langsung ke HTML */}
+        {/* FontAwesome untuk Ikon */}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       </head>
-      <body className={inter.className}>
-        {/* Navbar dipasang di luar agar selalu muncul */}
-        <Navbar />
+      
+      <body className={`${inter.className} bg-white antialiased`}>
         
-        {/* pt-24 memberikan ruang agar konten tidak tertutup Navbar kaca */}
-        <main className="pt-24">
+        {/* 1. Navbar: Selalu di atas */}
+        <Navbar />
+
+        {/* 2. Main: Ini adalah wadah untuk isi artikel/halaman Anda */}
+        <main className="min-h-screen pt-24">
           {children}
         </main>
+
+        {/* 3. Footer: Penutup di bagian paling bawah halaman */}
+        <Footer />
+
+        {/* 4. Komponen Melayang: Tidak terikat konten, muncul di atas semua elemen */}
         <SearchModal />
-      {/* Widget WhatsApp ditanam di luar tag main agar selalu melayang */}
+        <BackToTop />
         <WhatsAppWidget />
+
       </body>
     </html>
   );
