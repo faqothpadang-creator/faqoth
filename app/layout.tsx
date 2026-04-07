@@ -25,7 +25,7 @@ export default function RootLayout({
         {/* 1. Navbar: Selalu di atas */}
         <Navbar />
 
-        {/* 2. Main: Ini adalah wadah untuk isi artikel/halaman Anda */}
+        {/* 2. Main: Wadah untuk isi artikel/halaman Anda */}
         <main className="min-h-screen pt-24">
           {children}
         </main>
@@ -33,11 +33,13 @@ export default function RootLayout({
         {/* 3. Footer: Penutup di bagian paling bawah halaman */}
         <Footer />
 
-        {/* 4. Komponen Melayang: Tidak terikat konten, muncul di atas semua elemen */}
-        <SearchModal />
-        <BackToTop />
-        <WhatsAppWidget />
-        
+        {/* 4. Kelompok tombol melayang yang akan ikut sembunyi di mode kitab */}
+        <div className="tombol-melayang">
+          <SearchModal />
+          <BackToTop />
+          {/* Untuk kerapian, saya asumsikan WhatsAppWidget diatur CSS-nya di kiri bawah di file-nya */}
+          <WhatsAppWidget />
+        </div>
 
       </body>
     </html>
